@@ -1,0 +1,143 @@
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+/* font-family: 'Noto Sans KR', sans-serif !important;
+font-family: 'Open Sans', sans-serif !important; */
+
+body {
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
+.login {
+    float: right;
+    text-decoration: none;
+    color: black;
+}
+
+.nav_body {
+	width: 121px;
+	height: 100%;
+	margin: 42px 0 0 50px !important;
+	padding: 0 !important;
+	display: flex;
+	flex-direction: column;
+    float: left;
+}
+
+.nav_logo {
+	width: 100px;
+	height: 100px;
+	object-fit: cover;
+}
+
+.nav_container {
+	width: 121px;
+	display: flex;
+	flex-direction: column;
+}
+
+.nav_container_title_typo {
+	font-family: Noto Sans;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 20px;
+	line-height: 27px;
+	color: #000000;
+	margin-top: 59px;
+}
+
+.nav_container_bar {
+	width: 121px;
+	height: 0;
+	border: 1px solid #dddddd;
+	margin-top: 11px;
+}
+
+.nav_container_element_typo {
+	font-family: Noto Sans;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 16px;
+	line-height: 22px;
+	color: #c2c2c2;
+	margin-top: 33px;
+}
+
+.nav_container_element_typo_first {
+	margin-top: 23px !important;
+}
+
+.nav_container_community_typo {
+	font-family: Noto Sans;
+	font-style: normal;
+	font-size: 20px;
+	line-height: 27px;
+	color: #979797;
+	margin-top: 46px;
+}
+
+.nav_container_community_typo_point {
+	color: #fe7c54 !important;
+}
+
+#content {
+    margin: 90px 0 0 100px;
+    float: left;
+}
+
+select {
+    width: 150px;
+    padding: 0.7em;
+    border: 1px none;
+    border-radius: 50px;
+    background: url('vector.png') no-repeat 95% 50%;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance : none;
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+#do-select {
+    background-color: rgba(254, 124, 84, 0.3);
+}
+
+#city-select {
+    background-color: rgba(254, 124, 84, 0.3);
+}
+
+#logo {
+    display: inline-block;
+}
+
+.login { 
+    float: right;
+}
+
+#search-engine {
+    background-color: rgba(254, 124, 84, 0.7);
+    width: 300px;
+    padding: 0.7em;
+    border: 1px none;
+    border-radius: 50px;
+}
+
+
+button {
+    color: #FE7C54;
+    border: 0;
+    outline: 0;
+    background: none;
+}
+
+.map-content {
+	margin-top: 10px;
+}
+
+#map {
+	width:1000px;
+	height: 500px;
+}

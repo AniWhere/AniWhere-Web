@@ -1,0 +1,118 @@
+{% load static %}
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css'%}">
+    <style>
+    </style>
+</head>
+
+<body>
+    <!-- 전체를 감싸는 태그 -->
+    <div id="page-wrapper">
+
+        <!-- header -->
+        <header id="main-header">
+        </header>
+
+        <!-- navigation -->
+        <div class="nav_body">
+
+            <div class="nav_logo">
+                <img src="{% static 'logo3.png' %}" style="width: 100px; height: 100px;" id="logo">
+                <!--<nav class="login">
+                    <a href="#" class="login">로그인</a>
+                    <a href="#" class="login">회원가입</a>
+                </nav>-->
+            </div>
+            <div class="nav_container">
+                <div class="nav_container_title_typo">
+                    장소
+                </div>
+                <div class="nav_container_bar"></div>
+                <div class="nav_container_element_typo nav_container_element_typo_first">
+                    추천
+                </div>
+                <div class="nav_container_element_typo nav_container_community_typo_point">
+                    장소 찾기
+                </div>
+                <div class="nav_container_element_typo ">
+                    여행 계획
+                </div>
+                <div class="nav_container_element_typo">
+                    즐겨찾기
+                </div>
+                <div class="nav_container_community_typo">
+                    커뮤니티
+                </div>
+            </div>
+        </div>
+
+        <!-- main content -->
+        <div id="content">
+
+            <h3>장소 찾기</h3>
+
+            <div class="search">
+                <!--검색부분-->
+                <!--검색창-->
+                <input type="text" placeholder="검색" id="search-engine">
+                <img src="{% static 'search_btn.png' %}" id="search_btn">
+                <!--시/도선택-->
+                <select name="do" id="do-select">
+                    <option>도시</option>
+                    <option value="서울">서울</option>
+                    <option value="경기">경기</option>
+                </select>
+                <!--시/군/구 선택-->
+                <select name="city" id="city-select">
+                    <option>시/군/구</option>
+                    <option value="종로구">종로구</option>
+                    <option value="중구">중구</option>
+                    <option value="용산구">용산구</option>
+                    <option value="성동구">성동구</option>
+                    <option value="광진구">광진구</option>
+                    <option value="동대문구">동대문구</option>
+                    <option value="중랑구">중랑구</option>
+                    <option value="성북구">성북구</option>
+                    <option value="강북구">강북구</option>
+                    <option value="도봉구">도봉구</option>
+                    <option value="노원구">노원구</option>
+                    <option value="은평구">은평구</option>
+                    <option value="서대문구">서대문구</option>
+                    <option value="마포구">마포구</option>
+                    <option value="양천구">양천구</option>
+                    <option value="강서구">강서구</option>
+                </select>
+                <!--필터 적용 버튼-->
+                <button>필터 적용</button>
+            </div>
+
+            <!--지도-->
+            <div class="map-content">
+                <div id="map"></div>
+                <script type="text/javascript"
+                    src="//dapi.kakao.com/v2/maps/sdk.js?appkey=06f9761da60ee12828024f9a49b10eb3"></script>
+                <script>
+                    var container = document.getElementById('map');
+                    var options = {
+                        center: new kakao.maps.LatLng(33.450701, 126.570667),
+                        level: 3
+                    };
+
+                    var map = new kakao.maps.Map(container, options);
+                </script>
+            </div>
+        </div>
+    </div>
+
+    <!-- <div class="recentplace">
+            최근 본 장소
+            가평 게스트펜션
+            속초 st310
+            제주 레반스토리
+        </div>-->
+
+</body>
+
+</html>

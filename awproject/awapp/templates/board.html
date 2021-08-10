@@ -1,0 +1,273 @@
+{% load static %}
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/board.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/nav.css'%}">
+
+    <style>
+        @import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+        /* font-family: 'Noto Sans KR', sans-serif !important;
+font-family: 'Open Sans', sans-serif !important; */
+
+        body {
+            margin: 0 !important;
+            padding: 0 !important;
+            position: relative;
+        }
+
+        .page-wrapper {
+            width: 100%;
+            display: flex;
+        }
+
+        .login_container {
+            display: flex;
+            position: absolute;
+            top: 99px;
+            left: 1240px;
+        }
+
+        .login_typo {
+            width: 80px;
+            font-family: Noto Sans;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 19px;
+            color: #333333;
+            margin-right: 18px;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .recent_body {
+            margin-top: 50px;
+            padding: 0 0 0 20px;
+            background-color: rgba(254, 124, 84, 0.1);
+            width: 220px;
+            height: 150px;
+            border-radius: 10px;
+            display: flex;
+        }
+
+        #page-wrapper {
+            display: flex;
+        }
+
+        #content {
+            margin: 180px 0 0 152px;
+        }
+
+        select {
+            width: 150px;
+            padding: 0.7em;
+            border: 1px none;
+            border-radius: 50px;
+            background: url('vector.png') no-repeat 95% 50%;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+        }
+
+        select::-ms-expand {
+            display: none;
+        }
+        
+        .board_typo {
+            font-size: 26px;
+            margin-top: -15px;
+            margin-bottom: 20px;
+        }
+
+        #do-select {
+            background-color: rgba(254, 124, 84, 0.3);
+            margin-right: 15px;
+        }
+
+        #city-select {
+            background-color: rgba(254, 124, 84, 0.3);
+        }
+
+        #recent {
+            font-size: 17px;
+        }
+
+        #search-engine {
+            background-image: url('search_btn.png');
+            background-repeat: no-repeat;
+            background-position: 95% 50%;
+            background-color: rgba(254, 124, 84, 0.7);
+            margin-right: 15px;
+            width: 300px;
+            padding: 0.7em;
+            border: 1px none;
+            border-radius: 50px;
+        }
+
+        #search-engine placeholder {
+            color: #ffffff;
+        }
+
+        button {
+            color: #FE7C54;
+            border: 0;
+            outline: 0;
+            background: none;
+        }
+
+        .map-content {
+            margin-top: 10px;
+        }
+
+        #map {
+            width: 1000px;
+            height: 500px;
+        }
+
+        footer {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 35px;
+            text-align: center;
+            background-color: #6F6F6F;
+        }
+
+        #footer-message {
+            color: white;
+            font-size: 10px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <!-- 전체를 감싸는 태그 -->
+    <div id="page-wrapper">
+
+        <!-- navigation -->
+        <div class="nav_body">
+
+            <div class="nav_logo">
+                <img src="{% static 'logo3.png' %}" style="width: 100px; height: 100px;" id="logo">
+            </div>
+            <div class="nav_container">
+                <div class="nav_container_title_typo">
+                    장소
+                </div>
+                <div class="nav_container_bar"></div>
+                <div class="nav_container_element_typo nav_container_element_typo_first">
+                    추천
+                </div>
+                <div class="nav_container_element_typo nav_container_community_typo_point">
+                    장소 찾기
+                </div>
+                <div class="nav_container_element_typo ">
+                    여행 계획
+                </div>
+                <div class="nav_container_element_typo">
+                    즐겨찾기
+                </div>
+                <div class="nav_container_community_typo">
+                    커뮤니티
+                </div>
+            </div>
+
+            <div class="recent_body">
+                <h4 id="recent">최근 본 장소</h4>
+                <div id="recent_place"></div>
+            </div>
+
+        </div>
+
+
+        <div class="login_container">
+            <div class="login_typo">
+                로그인
+            </div>
+            <div class="login_typo">
+                마이페이지
+            </div>
+        </div>
+
+        <!-- main content -->
+        <div id="content">
+
+            <div class="board_typo">
+                장소 찾기
+              </div>
+
+            <div class="search">
+                <!--검색부분-->
+                <!--검색창-->
+                <input type="text" placeholder="검색" id="search-engine">
+                <!--시/도선택-->
+                <select name="do" id="do-select">
+                    <option>도시</option>
+                    <option value="서울">서울</option>
+                    <option value="경기">경기</option>
+                </select>
+                <!--시/군/구 선택-->
+                <select name="city" id="city-select">
+                    <option>시/군/구</option>
+                    <option value="종로구">종로구</option>
+                    <option value="중구">중구</option>
+                    <option value="용산구">용산구</option>
+                    <option value="성동구">성동구</option>
+                    <option value="광진구">광진구</option>
+                    <option value="동대문구">동대문구</option>
+                    <option value="중랑구">중랑구</option>
+                    <option value="성북구">성북구</option>
+                    <option value="강북구">강북구</option>
+                    <option value="도봉구">도봉구</option>
+                    <option value="노원구">노원구</option>
+                    <option value="은평구">은평구</option>
+                    <option value="서대문구">서대문구</option>
+                    <option value="마포구">마포구</option>
+                    <option value="양천구">양천구</option>
+                    <option value="강서구">강서구</option>
+                    <option value="구로구">구로구</option>
+                    <option value="금천구">금천구</option>
+                    <option value="영등포구">영등포구</option>
+                    <option value="동작구">동작구</option>
+                    <option value="관악구">관악구</option>
+                    <option value="서초구">서초구</option>
+                    <option value="강남구">강남구</option>
+                    <option value="송파구">송파구</option>
+                    <option value="강동구">강동구</option>
+                </select>
+                <!--필터 적용 버튼-->
+                <button>필터 적용</button>
+            </div>
+
+            <!--지도-->
+            <div class="map-content">
+                <div id="map"></div>
+                <script type="text/javascript"
+                    src="//dapi.kakao.com/v2/maps/sdk.js?appkey=06f9761da60ee12828024f9a49b10eb3"></script>
+                <script>
+                    var container = document.getElementById('map');
+                    var options = {
+                        center: new kakao.maps.LatLng(33.450701, 126.570667),
+                        level: 3
+                    };
+
+                    var map = new kakao.maps.Map(container, options);
+                </script>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div id="footer-div">
+            <p id="footer-message">2021 ANIWHERE from SSWU</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

@@ -47,7 +47,7 @@ body {
 	font-family: Noto Sans;
 	font-style: normal;
 	font-weight: 500;
-	font-size: 26px;
+	font-size: 23px;
 	line-height: 40px;
 	color: #000000;
 }
@@ -137,4 +137,19 @@ body {
 	line-height: 16px;
 	color: #000000;
 	margin-top: 10px;
+}
+
+footer {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 35px;
+	text-align: center;
+	background-color: #6F6F6F;
+}
+
+#footer-message {
+	color: white;
+	font-size: 10px;
 }

@@ -13,6 +13,10 @@
       position: relative;
     }
     
+    a {
+      text-decoration: none;
+    }
+
     .nav {
       width: 121px !important;
       height: 100% !important;
@@ -56,7 +60,7 @@
       font-family: Noto Sans;
       font-style: normal;
       font-weight: 500;
-      font-size: 26px;
+      font-size: 23px;
       line-height: 40px;
       color: #000000;
     }
@@ -201,16 +205,16 @@
         </div>
         <div class="nav_container_bar"></div>
         <div class="nav_container_element_typo nav_container_element_typo_first nav_container_community_typo_point">
-          추천
+          <a href="{% url 'recommend' %}">추천</a>
         </div>
         <div class="nav_container_element_typo">
-          장소 찾기
+          <a href="{% url 'showattractions' %}">장소 찾기</a>
         </div>
         <div class="nav_container_element_typo">
-          여행 계획
+          <a href="{% url 'plan' %}">여행 계획</a>
         </div>
         <div class="nav_container_element_typo">
-          즐겨찾기
+          <a href="{% url 'bookmark' %}">즐겨 찾기</a>
         </div>
         <div class="nav_container_community_typo">
           커뮤니티

@@ -190,6 +190,50 @@
       font-size: 10px;
     }
     
+    #star-five {
+      margin: 50px 0;
+      position: relative;
+      display: block;
+      color: black;
+      width: 0px;
+      height: 0px;
+      border-right: 20x solid transparent;
+      border-bottom: 70px solid black;
+      border-left: 100px solid transparent;
+      transform: rotate(35deg);
+    }
+    #star-five:before {
+      border-bottom: 80px solid black;
+      border-left: 30px solid transparent;
+      border-right: 30px solid transparent;
+      position: absolute;
+      height: 0;
+      width: 0;
+      top: -45px;
+      left: -65px;
+      display: block;
+      content: '';
+      transform: rotate(-35deg);
+    }
+    #star-five:after {
+      position: absolute;
+      display: block;
+      color: black;
+      top: 3px;
+      left: -105px;
+      width: 0px;
+      height: 0px;
+      border-right: 100px solid transparent;
+      border-bottom: 70px solid black;
+      border-left: 100px solid transparent;
+      transform: rotate(-70deg);
+      content: '';
+    }
+  
+    #star_btn{
+      background-color: transparent;
+      border:transparent
+    }
   </style>
 </head>
 
@@ -243,171 +287,75 @@
       </div>
 
       <!-- 카드 -->
-
       <div class="recommend_conatiner_card_container">
+        {% for bookmark in bookmarks.all %}
         <div class="recommend_conatiner_card_wrapper">
-          <div class="recommend_container_card_img"></div>
+          <img src="{{bookmark.image_url|default_if_none:'#'}}" class="recommend_container_card_img">
           <div class="recommend_container_card_title_conatiner">
             <div class="recommend_container_card_title_typo">
-              예시입니다 예시입니다
+              {{bookmark.name}}
             </div>
-            <div class="recommend_container_title_img">
-              <img src="{% static 'recommend_starClicked.png' %}" style="width: 20px; height: 20px;">
-            </div>
+            {%if bookmark.star is 0 %}
+              <div class="recommend_container_title_img">
+                <form action="{%url 'check' bookmark.id %}" method="post">
+                    {% csrf_token %}
+                    <button type="submit" id="star_btn"><img src="{% static 'recommend_starInactive.png' %}" width="20" height="20"></button>
+                </form>
+              </div>
+            {% endif %}
+            {%if bookmark.star is 1 %}
+              <div class="recommend_container_title_img">
+                <form action="{%url 'check' bookmark.id %}" method="post">
+                    {% csrf_token %}
+                    <button type="submit" id="star_btn"><img src="{% static 'recommend_starClicked.png' %}" width="20" height="20"></button>
+                </form>
+              </div>
+            {% endif %}
+            
           </div>
           <div class="recommend_container_card_description_typo">
-            설명입니다 설명입니다
+            {{bookmark.description}}
           </div>
         </div>
-        <div class="recommend_conatiner_card_wrapper">
-          <div class="recommend_container_card_img"></div>
-          <div class="recommend_container_card_title_conatiner">
-            <div class="recommend_container_card_title_typo">
-              예시입니다 예시입니다
-            </div>
-            <div class="recommend_container_title_img">
-              <img src="{% static 'recommend_starInactive.png' %}" style="width: 20px; height: 20px;">
-            </div>
-          </div>
-          <div class="recommend_container_card_description_typo">
-            설명입니다 설명입니다
-          </div>
-        </div>
-        <div class="recommend_conatiner_card_wrapper">
-          <div class="recommend_container_card_img"></div>
-          <div class="recommend_container_card_title_conatiner">
-            <div class="recommend_container_card_title_typo">
-              예시입니다 예시입니다
-            </div>
-            <div class="recommend_container_title_img">
-              <img src="{% static 'recommend_starInactive.png' %}" style="width: 20px; height: 20px;">
-            </div>
-          </div>
-          <div class="recommend_container_card_description_typo">
-            설명입니다 설명입니다
-          </div>
-        </div>
-        <div class="recommend_conatiner_card_wrapper">
-          <div class="recommend_container_card_img"></div>
-          <div class="recommend_container_card_title_conatiner">
-            <div class="recommend_container_card_title_typo">
-              예시입니다 예시입니다
-            </div>
-            <div class="recommend_container_title_img">
-              <img src="{% static 'recommend_starInactive.png' %}" style="width: 20px; height: 20px;">
-            </div>
-          </div>
-          <div class="recommend_container_card_description_typo">
-            설명입니다 설명입니다
-          </div>
-        </div>
-      </div>
-
-      <div class="recommend_container_sub_title_container">
-        <div class="recommend_container_sub_title_typo">
-          후기 4.0이상인 반려동물 동반 가능 카페
-        </div>
-        <div class="recommend_container_sub_title_swiper">
-          <img src="{% static 'recommend_Btn.png' %}" style="width: 40px; height: 20px;">
-        </div>
-      </div>
-
-      <div class="recommend_conatiner_card_container">
-        <div class="recommend_conatiner_card_wrapper">
-          <div class="recommend_container_card_img"></div>
-          <div class="recommend_container_card_title_conatiner">
-            <div class="recommend_container_card_title_typo">
-              예시입니다 예시입니다
-            </div>
-            <div class="recommend_container_title_img">
-              <img src="{% static 'recommend_starInactive.png' %}" style="width: 20px; height: 20px;">
-            </div>
-          </div>
-          <div class="recommend_container_card_description_typo">
-            설명입니다 설명입니다
-          </div>
-        </div>
-        <div class="recommend_conatiner_card_wrapper">
-          <div class="recommend_container_card_img"></div>
-          <div class="recommend_container_card_title_conatiner">
-            <div class="recommend_container_card_title_typo">
-              예시입니다 예시입니다
-            </div>
-            <div class="recommend_container_title_img">
-              <img src="{% static 'recommend_starInactive.png' %}" style="width: 20px; height: 20px;">
-            </div>
-          </div>
-          <div class="recommend_container_card_description_typo">
-            설명입니다 설명입니다
-          </div>
-        </div>
-        <div class="recommend_conatiner_card_wrapper">
-          <div class="recommend_container_card_img"></div>
-          <div class="recommend_container_card_title_conatiner">
-            <div class="recommend_container_card_title_typo">
-              예시입니다 예시입니다
-            </div>
-            <div class="recommend_container_title_img">
-              <img src="{% static 'recommend_starInactive.png' %}" style="width: 20px; height: 20px;">
-            </div>
-          </div>
-          <div class="recommend_container_card_description_typo">
-            설명입니다 설명입니다
-          </div>
-        </div>
-        <div class="recommend_conatiner_card_wrapper">
-          <div class="recommend_container_card_img"></div>
-          <div class="recommend_container_card_title_conatiner">
-            <div class="recommend_container_card_title_typo">
-              예시입니다 예시입니다
-            </div>
-            <div class="recommend_container_title_img">
-              <img src="{% static 'recommend_starInactive.png' %}" style="width: 20px; height: 20px;">
-            </div>
-          </div>
-          <div class="recommend_container_card_description_typo">
-            설명입니다 설명입니다
-          </div>
-        </div>
-      </div>
-
+        {% endfor %}
       <div class="recommend_container_sub_title_typo">
         인기 지역 보기
       </div>
-
+      
       <div class="recommend_container_popular_card_container">
         <div class="recommend_container_popular_card_wrapper">
-          <div class="recommend_container_popular_card_img"></div>
+          <div class="recommend_container_popular_card_img"><img src="{% static 'recommend_Busan.png' %}" width="172"></div>
           <div class="recommend_container_popular_card_typo">
-            예시입니다
+            부산
           </div>
         </div>
         <div class="recommend_container_popular_card_wrapper">
-          <div class="recommend_container_popular_card_img"></div>
+          <div class="recommend_container_popular_card_img"><img src="{% static 'recommend_Sokcho.png' %}" width="172"></div>
           <div class="recommend_container_popular_card_typo">
-            예시입니다
+            속초
           </div>
         </div>
         <div class="recommend_container_popular_card_wrapper">
-          <div class="recommend_container_popular_card_img"></div>
+          <div class="recommend_container_popular_card_img"><img src="{% static 'recommend_Gangneung.png' %}" width="172"></div>
           <div class="recommend_container_popular_card_typo">
-            예시입니다
+            강릉
           </div>
         </div>
         <div class="recommend_container_popular_card_wrapper">
-          <div class="recommend_container_popular_card_img"></div>
+          <div class="recommend_container_popular_card_img"><img src="{% static 'recommend_Yeosu.png' %}" width="172"></div>
           <div class="recommend_container_popular_card_typo">
-            예시입니다
+            여수
           </div>
         </div>
         <div class="recommend_container_popular_card_wrapper">
-          <div class="recommend_container_popular_card_img"></div>
+          <div class="recommend_container_popular_card_img"><img src="{% static 'recommend_Yeosu-1.png' %}" width="172"></div>
           <div class="recommend_container_popular_card_typo">
-            예시입니다
+            제주
           </div>
         </div>
       </div>
       <div class="recommend_container_margin"></div>
+
 
     </div>
   </div>

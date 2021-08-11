@@ -1,20 +1,30 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
+from .models import Bookmark
 import json
-# Create your views here.
+
 def main(request):
     return render(request,"main.html")
 
-def board(request):
-    return render(request,"board.html")
-
 def bookmark(request):
-    return render(request,"bookmark.html")
+    bookmarks=Bookmark.objects
+    return render(request,"bookmark.html",{'bookmarks':bookmarks})
 
+
+def check(request,id):
+    bookmark = Bookmark.objects.get(id=id)
+    if bookmark.star is 1:
+        bookmark.star = 0
+    else:
+        bookmark.star = 1
+    bookmark.save()
+    return redirect('recommend')
+    
 def plan(request):
     return render(request,"plan.html")
 
 def recommend(request):
-    return render(request,"recommend.html")
+    bookmarks=Bookmark.objects
+    return render(request,"recommend.html",{'bookmarks':bookmarks})
 
 def showattractions(request):
     with open('static/json/example.json', encoding='utf-8') as json_file:

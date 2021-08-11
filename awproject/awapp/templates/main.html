@@ -1,117 +1,136 @@
 {% load static %}
-<html>
+
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet" type="text/css" href="{% static 'css/main.css'%}">
+
+    <title>Aniwhere</title>
+
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap');
+
+        body {
+            margin: 0 !important;
+            padding: 0 !important;
+            height: 100%;
+            position: relative;
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+
+        .main-desc {
+            text-align: center;
+        }
+
+        .login_container {
+            display: flex;
+            /*top: 99px;
+            left: 1240px;*/
+        }
+
+        .login_typo {
+            width: 80px;
+            font-family: Noto Sans;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 19px;
+            color: #FE7C54;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        #logo {
+            width: 160px;
+            height: 148px;
+            margin-top: 111px;
+        }
+
+        #title {
+            font-size: 50px;
+            margin-bottom: 30px;
+            margin-top: 0%;
+
+        }
+
+        #subtitle {
+            color: #FE7C54;
+        }
+
+        .start_btn {
+            background-color: rgba(254, 124, 84, 0.7);
+            width: 243px;
+            height: 59px;
+            display: table-cell;
+            vertical-align: middle;
+            color: #ffffff;
+            border: 1px none;
+            border-radius: 50px;
+        }
+
+        .desc {
+            width: 253px;
+            height: 104px;
+            font-size: 14px;
+            letter-spacing: -0.02em;
+        }
+
+        footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 25px;
+            font-size: 10px;
+            text-align: center; 
+            display: flex;
+            align-items: center;
+            color: white;  
+            background-color: #6F6F6F;
+        }
     </style>
 </head>
 
 <body>
     <!-- 전체를 감싸는 태그 -->
-    <div id="page-wrapper">
+    <div class="page-wrapper">
 
-        <!-- header -->
-        <header id="main-header">
-        </header>
+        <div class="main-desc">
+            <img src="{% static 'logo3.png' %}" alt="logo" id="logo">
+            <h1 id="title">Aniwhere</h1>
+            <p id="subtitle">내 반려동물과 함께하는 여행을 위해</p>
+            <p id="desc">ANIWHERE는 반려동물을 키우는 가족들이
+                <br>조금 더 편리하게 여행을 계획하고
+                <br>일상에서 소소한 행복을 느끼실 수 있도록
+                <br>도움을 드리고자 제작하게 되었습니다.
+            </p>
 
-        <!-- navigation -->
-        <div class="nav_body">
-
-            <div class="nav_logo">
-                <img src="{% static 'logo3.png' %}" style="width: 100px; height: 100px;" id="logo">
-                <!--<nav class="login">
-                    <a href="#" class="login">로그인</a>
-                    <a href="#" class="login">회원가입</a>
-                </nav>-->
+            <div class="start_btn">
+                <a href="{%url 'recommend'%}">시작하기</a>
             </div>
-            <div class="nav_container">
-                <div class="nav_container_title_typo">
-                    장소
+
+            <div class="login_container">
+                <div class="login_typo">
+                    <a href="{%url 'login'%}">로그인</a> 
                 </div>
-                <div class="nav_container_bar"></div>
-                <div class="nav_container_element_typo nav_container_element_typo_first">
-                    추천
-                </div>
-                <div class="nav_container_element_typo nav_container_community_typo_point">
-                    장소 찾기
-                </div>
-                <div class="nav_container_element_typo ">
-                    여행 계획
-                </div>
-                <div class="nav_container_element_typo">
-                    즐겨찾기
-                </div>
-                <div class="nav_container_community_typo">
-                    커뮤니티
+                <div class="login_typo">
+                    <a href="{%url 'signup'%}">회원가입</a> 
                 </div>
             </div>
+
         </div>
 
-        <!-- main content -->
-        <div id="content">
-
-            <h3>장소 찾기</h3>
-
-            <div class="search">
-                <!--검색부분-->
-                <!--검색창-->
-                <input type="text" placeholder="검색" id="search-engine">
-                <img src="{% static 'search_btn.png' %}" id="search_btn">
-                <!--시/도선택-->
-                <select name="do" id="do-select">
-                    <option>도시</option>
-                    <option value="서울">서울</option>
-                    <option value="경기">경기</option>
-                </select>
-                <!--시/군/구 선택-->
-                <select name="city" id="city-select">
-                    <option>시/군/구</option>
-                    <option value="종로구">종로구</option>
-                    <option value="중구">중구</option>
-                    <option value="용산구">용산구</option>
-                    <option value="성동구">성동구</option>
-                    <option value="광진구">광진구</option>
-                    <option value="동대문구">동대문구</option>
-                    <option value="중랑구">중랑구</option>
-                    <option value="성북구">성북구</option>
-                    <option value="강북구">강북구</option>
-                    <option value="도봉구">도봉구</option>
-                    <option value="노원구">노원구</option>
-                    <option value="은평구">은평구</option>
-                    <option value="서대문구">서대문구</option>
-                    <option value="마포구">마포구</option>
-                    <option value="양천구">양천구</option>
-                    <option value="강서구">강서구</option>
-                </select>
-                <!--필터 적용 버튼-->
-                <button>필터 적용</button>
-            </div>
-
-            <!--지도-->
-            <div class="map-content">
-                <div id="map"></div>
-                <script type="text/javascript"
-                    src="//dapi.kakao.com/v2/maps/sdk.js?appkey=06f9761da60ee12828024f9a49b10eb3"></script>
-                <script>
-                    var container = document.getElementById('map');
-                    var options = {
-                        center: new kakao.maps.LatLng(33.450701, 126.570667),
-                        level: 3
-                    };
-
-                    var map = new kakao.maps.Map(container, options);
-                </script>
-            </div>
-        </div>
     </div>
 
-    <!-- <div class="recentplace">
-            최근 본 장소
-            가평 게스트펜션
-            속초 st310
-            제주 레반스토리
-        </div>-->
+    <footer>
+        <div>
+            <p>2021 ANIWHERE from SSWU</p>
+        </div>
+    </footer>
 
 </body>
 

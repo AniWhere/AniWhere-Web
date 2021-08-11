@@ -7,13 +7,19 @@ font-family: 'Open Sans', sans-serif !important; */
 body {
 	margin: 0 !important;
 	padding: 0 !important;
+	position: relative;
 }
 
-.login {
+.page-wrapper {
+	width: 100%;
+	display: flex;
+}
+
+/*.login{
     float: right;
     text-decoration: none;
     color: black;
-}
+}*/
 
 .nav_body {
 	width: 121px;
@@ -81,9 +87,39 @@ body {
 	color: #fe7c54 !important;
 }
 
+
+.login_container {
+	float: right;
+	top: 99px;
+	left: 1240px;
+}
+
+.login_typo {
+	width: 65px;
+	font-family: Noto Sans;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 19px;
+	color: #333333;
+	margin-right: 18px;
+	display: flex;
+	justify-content: flex-end;
+}
+
+.recent_body {
+	background-color: rgba(254, 124, 84, 0.1);
+	width: 244px;
+	height: 161px;
+	border-radius: 10px;
+}
+
 #content {
+	width: 1070px;
     margin: 90px 0 0 100px;
-    float: left;
+	display: flex;
+	flex-direction: column;
+	position: relative;
 }
 
 select {
@@ -125,8 +161,6 @@ select::-ms-expand {
     border-radius: 50px;
 }
 
-#search_btn {
-}
 
 button {
     color: #FE7C54;
@@ -134,3 +168,13 @@ button {
     outline: 0;
     background: none;
 }
+
+.map-content {
+	margin-top: 10px;
+}
+
+#map {
+	width:1000px;
+	height: 500px;
+}
+

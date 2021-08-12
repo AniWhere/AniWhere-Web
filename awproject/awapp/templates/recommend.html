@@ -290,7 +290,7 @@
       <div class="recommend_conatiner_card_container">
         {% for bookmark in bookmarks.all %}
         <div class="recommend_conatiner_card_wrapper">
-          <img src="{{bookmark.image_url|default_if_none:'#'}}" class="recommend_container_card_img">
+          <img src="{{bookmark.image.url}}" class="recommend_container_card_img">
           <div class="recommend_container_card_title_conatiner">
             <div class="recommend_container_card_title_typo">
               {{bookmark.name}}

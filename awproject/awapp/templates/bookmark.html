@@ -247,7 +247,7 @@
         {% for bookmark in bookmarks.all %}
         {% if bookmark.star is 1 %}
         <div class="recommend_conatiner_card_wrapper">
-          <img src="{{bookmark.image_url|default_if_none:'#'}}" class="recommend_container_card_img">
+          <img src="{{bookmark.image.url}}" class="recommend_container_card_img">
           <div class="recommend_container_card_title_conatiner">
             <div class="recommend_container_card_title_typo">
               {{bookmark.name}}

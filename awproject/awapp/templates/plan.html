@@ -109,7 +109,7 @@
       margin-top: 17px;
     }
 
-    .travel_plan_container_card_img {
+    .recommend_container_card_img {
       width: 244px;
       height: 157px;
       background: #0003;
@@ -168,8 +168,10 @@
   <div class="travel_plan_body">
     <div class="nav_body">
       <div class="nav_logo">
-        <img src="{% static 'logo3.png' %}" style="width: 100px; height: 100px;">
-      </div>
+        <a href="{% url 'recommend' %}">
+            <img src="{% static 'logo3.png' %}" style="width: 100px; height: 100px;" id="logo">
+        </a>
+    </div>
       <div class="nav_container">
         <div class="nav_container_title_typo">
           장소
@@ -196,9 +198,7 @@
       <div class="login_typo">
         <a href="{% url 'logout' %}">로그아웃</a>
       </div>
-      <div class="login_typo">
-        마이페이지
-      </div>
+     
     </div>
     <div class="travel_plan_container">
       <div class="travel_plan_container_title_typo">
@@ -217,87 +217,81 @@
 
       <div class="travel_plan_conatiner_card_container">
         <div class="travel_plan_conatiner_card_wrapper">
-          <div class="travel_plan_container_card_img"></div>
+          <img src="{% static 'plan_my_1.png' %}" class="recommend_container_card_img">
           <div class="travel_plan_container_card_title_conatiner">
             <div class="travel_plan_container_card_title_typo">
-              예시입니다 예시입니다
-            </div>
-            <div class="travel_plan_container_title_img">
-              <img src="{% static 'recommend_starClicked.png' %}" style="width: 20px; height: 20px;">
+              종강 후 여유로운 제주살이
             </div>
           </div>
           <div class="travel_plan_container_card_description_typo">
-            설명입니다 설명입니다
+            2019.02.04 | 1박 2일 | 제주도
           </div>
         </div>
         <div class="travel_plan_conatiner_card_wrapper">
-          <div class="travel_plan_container_card_img"></div>
+          <img src="{% static 'plan_my_2.png' %}" class="recommend_container_card_img">
           <div class="travel_plan_container_card_title_conatiner">
             <div class="travel_plan_container_card_title_typo">
-              예시입니다 예시입니다
-            </div>
-            <div class="travel_plan_container_title_img">
-              <img src="{% static 'recommend_starInactive.png' %}" style="width: 20px; height: 20px;">
+              첫 가평 여행
             </div>
           </div>
           <div class="travel_plan_container_card_description_typo">
-            설명입니다 설명입니다
+            2019.05.25 | 1박 2일 | 가평
           </div>
         </div>
         <div class="travel_plan_conatiner_card_wrapper">
-          <div class="travel_plan_container_card_img"></div>
+          <img src="{% static 'plan_my_3.png' %}" class="recommend_container_card_img">
           <div class="travel_plan_container_card_title_conatiner">
             <div class="travel_plan_container_card_title_typo">
-              예시입니다 예시입니다
-            </div>
-            <div class="travel_plan_container_title_img">
-              <img src="{% static 'recommend_starInactive.png' %}" style="width: 20px; height: 20px;">
+                하동으로 가자
             </div>
           </div>
           <div class="travel_plan_container_card_description_typo">
-            설명입니다 설명입니다
+            2019.07.09 | 1박 2일 | 하동
           </div>
         </div>
         <div class="travel_plan_conatiner_card_wrapper">
-          <div class="travel_plan_container_card_img"></div>
+          <img src="{% static 'plan_my_4.png' %}" class="recommend_container_card_img">
           <div class="travel_plan_container_card_title_conatiner">
             <div class="travel_plan_container_card_title_typo">
-              예시입니다 예시입니다
-            </div>
-            <div class="travel_plan_container_title_img">
-              <img src="{% static 'recommend_starInactive.png' %}" style="width: 20px; height: 20px;">
+              남해로 가자
             </div>
           </div>
           <div class="travel_plan_container_card_description_typo">
-            설명입니다 설명입니다
+            2019.10.12 | 1박 2일 | 남해
           </div>
         </div>
         <div class="travel_plan_conatiner_card_wrapper">
-          <div class="travel_plan_container_card_img"></div>
+          <img src="{% static 'plan_my_6.png' %}" class="recommend_container_card_img">
           <div class="travel_plan_container_card_title_conatiner">
             <div class="travel_plan_container_card_title_typo">
-              예시입니다 예시입니다
-            </div>
-            <div class="travel_plan_container_title_img">
-              <img src="{% static 'recommend_starInactive.png' %}" style="width: 20px; height: 20px;">
+              방울이와 기차 타고 여수
             </div>
           </div>
           <div class="travel_plan_container_card_description_typo">
-            설명입니다 설명입니다
+            2019.12.16 | 2박 3일 | 여수
           </div>
         </div>
         <div class="travel_plan_conatiner_card_wrapper">
-          <div class="travel_plan_container_card_img"></div>
+          <img src="{% static 'plan_my_5.png' %}" class="recommend_container_card_img">
           <div class="travel_plan_container_card_title_conatiner">
             <div class="travel_plan_container_card_title_typo">
-              예시입니다 예시입니다
-            </div>
-            <div class="travel_plan_container_title_img">
-              <img src="{% static 'recommend_starInactive.png' %}" style="width: 20px; height: 20px;">
+              조방울 당일치기 군산
             </div>
           </div>
           <div class="travel_plan_container_card_description_typo">
-            설명입니다 설명입니다
+            2020.05.20 | 당일치기 | 군산
+          </div>
+        </div>
+
+        <div class="travel_plan_conatiner_card_wrapper">
+          <img src="{% static 'plan_my_7.png' %}" class="recommend_container_card_img">
+          <div class="travel_plan_container_card_title_conatiner">
+            <div class="travel_plan_container_card_title_typo">
+              여유롭게 태안에서
+            </div>
+          </div>
+          <div class="travel_plan_container_card_description_typo">
+            2020.06.10 | 1박 2일 | 태안
           </div>
         </div>
       </div>
@@ -308,47 +302,47 @@
 
       <div class="travel_plan_conatiner_card_container">
         <div class="travel_plan_conatiner_card_wrapper">
-          <div class="travel_plan_container_card_img"></div>
+          <img src="{% static 'plan_other_1.png' %}" class="recommend_container_card_img">
           <div class="travel_plan_container_card_title_conatiner">
             <div class="travel_plan_container_card_title_typo">
-              예시입니다 예시입니다
+              요르 여수가 좋아?
             </div>
           </div>
           <div class="travel_plan_container_card_description_typo">
-            설명입니다 설명입니다
+            2019.04.13 | 1박 2일 | 여수
           </div>
         </div>
         <div class="travel_plan_conatiner_card_wrapper">
-          <div class="travel_plan_container_card_img"></div>
+          <img src="{% static 'plan_other_2.png' %}" class="recommend_container_card_img">
           <div class="travel_plan_container_card_title_conatiner">
             <div class="travel_plan_container_card_title_typo">
-              예시입니다 예시입니다
+              제주도로 떠나자
             </div>
           </div>
           <div class="travel_plan_container_card_description_typo">
-            설명입니다 설명입니다
+            2019.08.08 | 2박 3일 | 제주도
           </div>
         </div>
         <div class="travel_plan_conatiner_card_wrapper">
-          <div class="travel_plan_container_card_img"></div>
+          <img src="{% static 'plan_other_3.png' %}" class="recommend_container_card_img">
           <div class="travel_plan_container_card_title_conatiner">
             <div class="travel_plan_container_card_title_typo">
-              예시입니다 예시입니다
+              대박이와 함께하는 제주도 살이
             </div>
           </div>
           <div class="travel_plan_container_card_description_typo">
-            설명입니다 설명입니다
+            2019.10.28 | 1박 2일 | 가평
           </div>
         </div>
         <div class="travel_plan_conatiner_card_wrapper">
-          <div class="travel_plan_container_card_img"></div>
+          <img src="{% static 'plan_other_4.png' %}" class="recommend_container_card_img">
           <div class="travel_plan_container_card_title_conatiner">
             <div class="travel_plan_container_card_title_typo">
-              예시입니다 예시입니다
+              초코와 서울에서 호캉스
             </div>
           </div>
           <div class="travel_plan_container_card_description_typo">
-            설명입니다 설명입니다
+            2019.12.07 | 1박 2일 | 서울
           </div>
         </div>
       </div>

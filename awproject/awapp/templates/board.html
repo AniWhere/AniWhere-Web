@@ -235,7 +235,9 @@ font-family: 'Open Sans', sans-serif !important; */
         <div class="nav_body">
 
             <div class="nav_logo">
-                <img src="{% static 'logo3.png' %}" style="width: 100px; height: 100px;" id="logo">
+                <a href="{% url 'recommend' %}">
+                    <img src="{% static 'logo3.png' %}" style="width: 100px; height: 100px;" id="logo">
+                </a>
             </div>
             <div class="nav_container">
                 <div class="nav_container_title_typo">
@@ -272,9 +274,6 @@ font-family: 'Open Sans', sans-serif !important; */
         <div class="login_container">
             <div class="login_typo">
                 <a href="{% url 'logout' %}">로그아웃</a>
-            </div>
-            <div class="login_typo">
-                마이페이지
             </div>
         </div>
 

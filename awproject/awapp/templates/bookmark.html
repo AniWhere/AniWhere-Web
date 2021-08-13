@@ -12,7 +12,7 @@
       padding: 0 !important;
       position: relative;
     }
-    
+
     a {
       text-decoration: none;
     }
@@ -21,14 +21,14 @@
       width: 121px !important;
       height: 100% !important;
     }
-    
+
     .login_container {
       display: flex;
       position: absolute;
       top: 99px;
       left: 1240px;
     }
-    
+
     .login_typo {
       width: 80px;
       font-family: Noto Sans;
@@ -41,12 +41,12 @@
       display: flex;
       justify-content: flex-end;
     }
-    
+
     .recommend_body {
       width: 100%;
       display: flex;
     }
-    
+
     .recommend_container {
       width: 1070px;
       display: flex;
@@ -55,7 +55,7 @@
       margin-left: 153px;
       position: relative;
     }
-    
+
     .recommend_container_title_typo {
       font-family: Noto Sans;
       font-style: normal;
@@ -64,14 +64,14 @@
       line-height: 40px;
       color: #000000;
     }
-    
+
     .recommend_container_sub_title_container {
       width: 100%;
       margin-top: 14px;
       display: flex;
       justify-content: space-between;
     }
-    
+
     .recommend_container_sub_title_typo {
       font-family: Noto Sans;
       font-style: normal;
@@ -80,19 +80,19 @@
       line-height: 23px;
       color: #000000;
     }
-    
+
     .recommend_container_sub_title_swiper {
       width: 40px;
       height: 20px;
       object-fit: cover;
     }
-    
+
     .recommend_conatiner_card_container {
       width: 1100px;
       display: flex;
       flex-wrap: wrap;
     }
-    
+
     .recommend_conatiner_card_wrapper {
       width: 244px;
       height: 300px;
@@ -101,21 +101,21 @@
       margin-right: 30px;
       margin-top: 17px;
     }
-    
+
     .recommend_container_card_img {
       width: 244px;
       height: 157px;
       background: #0003;
       border-radius: 10px;
     }
-    
+
     .recommend_container_card_title_conatiner {
       display: flex;
       justify-content: space-between;
       align-items: center;
       margin-top: 13px;
     }
-    
+
     .recommend_container_card_title_typo {
       font-family: Roboto;
       font-style: normal;
@@ -124,13 +124,13 @@
       line-height: 19px;
       color: #000000;
     }
-    
+
     .recommend_container_title_img {
       width: 20px;
       height: 20px;
       object-fit: cover;
     }
-    
+
     .recommend_container_card_description_typo {
       font-family: Roboto;
       font-style: normal;
@@ -140,12 +140,12 @@
       color: #000000;
       margin-top: 10px;
     }
-    
+
     .recommend_container_popular_card_container {
       display: flex;
       margin-top: 19px;
     }
-    
+
     .recommend_container_popular_card_wrapper {
       width: 172px;
       display: flex;
@@ -153,14 +153,14 @@
       align-items: center;
       margin-right: 52px;
     }
-    
+
     .recommend_container_popular_card_img {
       width: 172px;
       height: 172px;
       border-radius: 90px;
       background: #0003;
     }
-    
+
     .recommend_container_popular_card_typo {
       font-family: Roboto;
       font-style: normal;
@@ -170,11 +170,11 @@
       color: #000000;
       margin-top: 19px;
     }
-    
+
     .recommend_container_margin {
       margin-top: 100px;
     }
-    
+
     footer {
       position: absolute;
       bottom: 0;
@@ -184,12 +184,11 @@
       text-align: center;
       background-color: #6F6F6F;
     }
-    
+
     #footer-message {
       color: white;
       font-size: 10px;
     }
-    
   </style>
 </head>
 
@@ -202,28 +201,28 @@
       <div class="nav_container">
         <div class="nav_container_title_typo">
           장소
-        </div>
-        <div class="nav_container_bar"></div>
-        <div class="nav_container_element_typo nav_container_element_typo_first nav_container_community_typo_point">
+      </div>
+      <div class="nav_container_bar"></div>
+      <div class="nav_container_element_typo nav_container_element_typo_first ">
           <a href="{% url 'recommend' %}">추천</a>
-        </div>
-        <div class="nav_container_element_typo">
-          <a href="{% url 'showattractions' %}">장소 찾기</a>
-        </div>
-        <div class="nav_container_element_typo">
+      </div>
+      <div class="nav_container_element_typo nav_container_community_typo_point">
+          <a href="{% url 'showattractions' %}" >장소 찾기</a>
+      </div>
+      <div class="nav_container_element_typo">
           <a href="{% url 'plan' %}">여행 계획</a>
-        </div>
-        <div class="nav_container_element_typo">
-          <a href="{% url 'bookmark' %}">즐겨 찾기</a>
-        </div>
-        <div class="nav_container_community_typo">
+      </div>
+      <div class="nav_container_element_typo">
+          <a href="{% url 'bookmark' %}" style="color: #fe7c54">즐겨 찾기</a>
+      </div>
+      <div class="nav_container_community_typo">
           커뮤니티
-        </div>
+      </div>
       </div>
     </div>
     <div class="login_container">
       <div class="login_typo">
-        로그인
+        <a href="{% url 'logout' %}">로그아웃</a>
       </div>
       <div class="login_typo">
         마이페이지
@@ -262,17 +261,17 @@
         </div>
         {% endif %}
         {% endfor %}
-      <div class="recommend_container_margin"></div>
+        <div class="recommend_container_margin"></div>
 
 
+      </div>
     </div>
-  </div>
 
-  <footer>
-    <div id="footer-div">
-      <p id="footer-message">2021 ANIWHERE from SSWU</p>
-    </div>
-  </footer>
+    <footer>
+      <div id="footer-div">
+        <p id="footer-message">2021 ANIWHERE from SSWU</p>
+      </div>
+    </footer>
 
 </body>
 

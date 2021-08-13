@@ -1,5 +1,6 @@
 from django.shortcuts import render,redirect
 from .models import Bookmark
+
 import json
 
 def main(request):

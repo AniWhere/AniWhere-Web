@@ -56,11 +56,9 @@
     }
 
     .travel_plan_container_title_typo {
-      font-style: normal;
-      font-weight: 500;
+      font-family: 'Noto Sans KR', sans-serif;
+      font-weight: normal;
       font-size: 23px;
-      line-height: 40px;
-      color: #000000;
     }
 
     .travel_plan_container_sub_title_typo {
@@ -184,7 +182,7 @@
           <a href="{% url 'showattractions' %}">장소 찾기</a>
         </div>
         <div class="nav_container_element_typo">
-          <a href="{% url 'plan' %}">여행 계획</a>
+          <a href="{% url 'plan' %}" style="color: #fe7c54">여행 계획</a>
         </div>
         <div class="nav_container_element_typo">
           <a href="{% url 'bookmark' %}">즐겨 찾기</a>
@@ -196,7 +194,7 @@
     </div>
     <div class="login_container">
       <div class="login_typo">
-        로그인
+        <a href="{% url 'logout' %}">로그아웃</a>
       </div>
       <div class="login_typo">
         마이페이지

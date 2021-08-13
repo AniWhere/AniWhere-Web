@@ -165,15 +165,12 @@
             </p>
 
             <div class="start_btn">
-                <a href="recommend"><img src="{% static 'main_startBtn.png' %}" alt=""></a>
+                <a href="{%url 'login'%}"><img src="{% static 'main_startBtn.png' %}" alt=""></a>
             </div>
 
             <div class="login_container">
                 <div class="login_typo">
-                    로그인
-                </div>
-                <div class="login_typo">
-                    회원가입
+                    <a href="{%url 'signup'%}">회원가입</a> 
                 </div>
             </div>
         </div>
@@ -191,7 +188,7 @@
                 <img src="{% static 'main_icon2.png' %}" alt="main_icon2" id="black">
                 <h4>검색</h4>
                 <p>가고 싶은 지역과 공간을 <br>직접 검색해서 찾아보세요 !
-                    <br>지역과 공간을 원하는대로 선택하고, <br>해당되는 곳들을 지도 위에서 <br>확인해보세요</ㅗ>
+                    <br>지역과 공간을 원하는대로 선택하고, <br>해당되는 곳들을 지도 위에서 <br>확인해보세요</p>
             </div>
             <div id="plan">
                 <img src="{% static 'main_icon3.png' %}" alt="main_icon3" id="black">
